@@ -3,5 +3,5 @@ apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
   extraMounts:
-  - hostPath: /Users/matanpeleg/devops
-    containerPath: /tmp/devops
+  - hostPath: /Users/matanpeleg/devops   # Your actual Mac path
+    containerPath: /tmp/local-repo      # Where the node sees it

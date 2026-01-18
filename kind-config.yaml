@@ -3,9 +3,9 @@ apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
   extraMounts:
-  - hostPath: /Users/matanpeleg/devops 
-    containerPath: /tmp/local-repo     
-- role: worker
+  - hostPath: /Users/matanpeleg/devops   # Path on your Mac
+    containerPath: /tmp/local-repo      # Path inside the cluster node
+- role: worker # Add this for your worker node as well if you have one
   extraMounts:
   - hostPath: /Users/matanpeleg/devops
     containerPath: /tmp/local-repo
