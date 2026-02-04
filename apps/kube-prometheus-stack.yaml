@@ -12,7 +12,7 @@ spec:
     helm:
       values: |
         grafana:
-          adminPassword: "Hipicalifrajelistick" # Change this for security!
+          adminPassword: "Hipicalifrajelistick"
           service:
             type: ClusterIP
   destination:
