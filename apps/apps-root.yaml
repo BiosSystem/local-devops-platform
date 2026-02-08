@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: 'https://github.com/BiosSystem/local-devops-platform.git'
     targetRevision: HEAD
-    path: apps
+    path: apps/infrastructure  # This tells Argo to look specifically here first
   destination:
     server: 'https://kubernetes.default.svc'
     namespace: argocd
