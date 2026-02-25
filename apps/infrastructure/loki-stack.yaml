@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: loki-stack
+  namespace: argocd
+spec:
+  project: default
+  source:
+    chart: loki-stack
+    repoURL: https://grafana.github.io/helm-charts
+    targetRevision: "2.10.1"
+    helm:
+      values: |
+        grafana:
+          enabled: false # You already have Grafana installed
+        prometheus:
+          enabled: false # You already have Prometheus installed
+        loki:
+          isDefault: false
+        promtail:
+          enabled: true # The agent that ships the logs to Loki
+  destination:
+    server: "https://kubernetes.default.svc"
+    namespace: monitoring
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
